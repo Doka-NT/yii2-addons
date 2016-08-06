@@ -1,5 +1,5 @@
-# Yii2 DropdownSorted
-## Example
+# Examples
+## Yii2 DropdownSorter
 ```php
 use skobka\yii2\widgets\DropdownSorter;
 // render dropdown
