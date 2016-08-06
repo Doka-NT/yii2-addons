@@ -4,18 +4,14 @@
 use skobka\yii2\widgets\DropdownSorter;
 // render dropdown
 <?=DropdownSorter::widget([
-    'sort' => $dataProvider->sort,
-    'attributes' => $dataProvider->sort->attributes,
-    'directionSwitcher' => '[data-role="sort-switcher"]',
-    'options' => [
-        'class' => 'filter-sort-by-field ss-ui-select',
-    ],
+    'sort' => $dataProvider->sort, // Required
+    'attributes' => $dataProvider->sort->attributes, // Required
+    'directionSwitcher' => '[data-role="sort-switcher"]', // Optional, use with direction switcher. Must be valid CSS selector
 ]);?>
 <!-- Use direction switc button -->
 <button
     data-role="sort-switcher"
-    class="filter-sort-by-order ss-ui-button ss-ui-button-light-gray ss-ui-icon
-        <?=DropdownSorter::getDirection() == SORT_DESC ? 'ss-ui-icon-order-desc' : 'ss-ui-icon-order-asc';?> "
-    >
+    class="<?=DropdownSorter::getDirection() == SORT_DESC ? 'order-desc' : 'order-asc';?> ">
+    Change sort direction
 </button>
 ```
