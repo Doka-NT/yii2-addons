@@ -71,6 +71,8 @@ class PhoneValidatorRus extends Validator
         return <<<JS
         var options = {$optionJson};
         var regexp = /^(\+7{0,1}|8{0,1})\d{10}$/;
+        value = value.replace(/[\(\)-\s]+/g, '');
+
         if (value && !regexp.test(value)){
             //noinspection JSUnresolvedVariable
             messages.push(options.message);
